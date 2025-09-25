@@ -33,6 +33,20 @@ Analyzes and breaks the ADOdb Crypt encryption algorithm using known plaintext a
 - `ADOdb_crypt_decode.py` - Decryption and attack implementation
 - `md5crypt_algorithm.md` - Detailed technical documentation
 
+### 3. Timerand Challenge - Time-Based Key Generation Attack
+**Location**: `TimerandChallenge/`
+
+Demonstrates the vulnerability in time-based key generation systems using MD5 and microsecond precision.
+
+- **Algorithm**: Hybrid encryption (AES-128-CBC + RSA-1024) with time-based key generation
+- **Vulnerability**: Predictable key generation from Unix timestamp with limited microsecond precision
+- **Attack**: Brute force search through 1,000,000 possible microsecond offsets
+- **Impact**: Complete decryption of time-encrypted messages
+
+**Key Files**:
+- `timerand_solver.py` - Complete attack implementation with brute force search
+- `README.md` - Detailed technical documentation
+
 ## Educational Purpose
 
 These implementations demonstrate:
@@ -40,5 +54,7 @@ These implementations demonstrate:
 - How to analyze and break weak encryption algorithms
 - The importance of using cryptographically secure primitives
 - Practical application of cryptanalysis techniques
+- Vulnerabilities in time-based key generation systems
+- The dangers of insufficient entropy in cryptographic keys
 
 **Warning**: These are educational examples. Always use established cryptographic libraries for production systems.
